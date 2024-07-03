@@ -47,5 +47,5 @@ export const config = {
   viemChain: viemChain,
   viemClient: viemClient,
   apiRefreshRate: 1000,
-  frontendOwner: "0xd0dDF915693f13Cf9B3b69dFF44eE77C901882f8",
+  frontendOwner: "0x734A5a550744F16CCe335f5735bf5eeE24412ba2",
 };
