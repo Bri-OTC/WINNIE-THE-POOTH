@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 214 14% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 3 86% 56%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+    --greenPIO-color: var(--NEXT_PUBLIC_GREENPIO_COLOR, #089981);
+    --redPIO-color: var(--NEXT_PUBLIC_REDPIO_COLOR, #f23645);
+    --orangePIO-color: var(--NEXT_PUBLIC_ORANGEPIO_COLOR, #e0ad0c);
+    --bluePIO-color: var(--NEXT_PUBLIC_BLUEPIO_COLOR, #666eff);
+  }
+
+  .dark {
+    --background: 210 21% 5%;
+    --foreground: 0 0% 100%;
+
+    --card: 210 15% 10%;
+    --card-foreground: 221 10% 59%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 46 90% 46%;
+    --primary-foreground: 210 21% 5%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 252 31% 10%;
+    --accent-foreground: 221 10% 59%;
+
+    --destructive: 3 86% 56%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 14% 20%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --green-color: var(--NEXT_PUBLIC_GREEN_COLOR, #089981);
+    --red-color: var(--NEXT_PUBLIC_RED_COLOR, #f23645);
+    --orange-color: var(--NEXT_PUBLIC_ORANGE_COLOR, #e0ad0c);
+    --blue-color: var(--NEXT_PUBLIC_BLUE_COLOR, #666eff);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1 {
+    @apply text-[17px] md:text-[24px];
+  }
+  h2 {
+    @apply text-[12px] md:text-[18px];
+  }
+  h3 {
+    @apply text-[11px] md:text-[16px];
+  }
+  p {
+    @apply text-[10px] md:text-[14px];
+  }
+}
+
+.custom-icon {
+  mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.fade-effect {
+  animation: fadeInOut 1s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.bidFade {
+  animation: fade 0.5s;
+}
+
+.askFade {
+  animation: fade 0.5s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 8px;
+    padding-right: 8px;
+    max-width: 100%;
+  }
+}
+
+.order-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.order-book {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.order-book thead {
+  flex-shrink: 0;
+}
+
+.order-book tbody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.order-book tr {
+  display: flex;
+}
+
+.order-book th,
+.order-book td {
+  flex: 1;
+  padding: 4px;
+  text-align: left;
+}
+
+.order-book .amount {
+  text-align: right;
+}
+
+.order-book .price {
+  text-align: right;
+}
+
+.flash-green {
+  animation: flashGreen 0.5s ease-in-out;
+}
+
+.flash-red {
+  animation: flashRed 0.5s ease-in-out;
+}
+
+@keyframes flashGreen {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #089981;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes flashRed {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #f23645;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.best-prices {
+  font-weight: bold;
+}
+
+.best-prices td {
+  text-align: center;
+}
+
+.loader {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #e0ad0c;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
